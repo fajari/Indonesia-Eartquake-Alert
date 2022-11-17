@@ -9,7 +9,7 @@ setuptools.setup(
     version="0.0.1",
     author="M Soleh Fajari",
     author_email="<m.soleh.fajari@gmail.com>",
-    description="This package will guide us get earth quake from bmkg and usgs",
+    description="This package will guide us get earth quake information from bmkg and usgs",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/fajari/Indonesia-Eartquake-Alert",
