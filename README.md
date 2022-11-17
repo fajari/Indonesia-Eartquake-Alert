@@ -5,7 +5,7 @@ This package contain latest information of earth quake in Indonesia from two gov
 - usgs.gov (United States Geological Survey)
 
 # Requirements
-This package need :
+This package needs:
 - Python
 - BeautifulSoup4
 
