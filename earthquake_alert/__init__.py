@@ -3,14 +3,13 @@ from typing import List
 import requests
 from bs4 import BeautifulSoup
 
-
 def data_extraction():
     try:
-        content = requests.get('http://bmkg.go.id')
+        content = requests.get('http://bmkg.go.id') #scrape from bmkg website
     except Exception:
         return None
 
-    if content.status_code == 200:
+    if content.status_code == 200: # Check if website status OK/200
         soup = BeautifulSoup(content.text, 'html.parser')
         result = soup.find('span', {'class': 'waktu'})
         result = result.text.split(', ')
