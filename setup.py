@@ -5,14 +5,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
 
-    name="BMKG-Latest",
-    version="0.4",
-    author="Firdaus W N",
-    author_email="<firdauswnn@gmail.com>",
-    description="This package will guide us to receive the latest Earthquake Information from BMKG Indonesia",
+    name="IndonesiaLatestEarthQuakeAlert",
+    version="0.0.1",
+    author="M Soleh Fajari",
+    author_email="<m.soleh.fajari@gmail.com>",
+    description="This package will guide us get earth quake from bmkg and usgs",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/futagoya/bmkg-latest",
+    url="https://github.com/fajari/Indonesia-Eartquake-Alert",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python :: 3",
