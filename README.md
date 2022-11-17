@@ -1,6 +1,6 @@
 # Indonesia-Eartquake-Alert
 
-This package contain latest information of earth quake in Indonesia from two government source
+This package contain latest information of earth quake in Indonesia from two government sources
 - bmkg.go.id (Indonesia Meteorological, Climatological, and Geophysical Agency)
 - usgs.gov (United States Geological Survey)
 
