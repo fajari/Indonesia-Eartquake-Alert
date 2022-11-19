@@ -62,3 +62,8 @@ def show_data(result):
     print(f"Coordinate : {result['location_eq']['ls']}, {result['location_eq']['bt']}")
     print(f"Depth : {result['depth_eq']}")
     return result
+
+if __name__ == '__main__'\
+        :
+    result = data_extraction()
+    show_data(result)
