@@ -3,13 +3,14 @@ from typing import List
 import requests
 from bs4 import BeautifulSoup
 
+
 def data_extraction():
     try:
-        content = requests.get('https://www.bmkg.go.id') #scrape from bmkg website
+        content = requests.get('https://www.bmkg.go.id')  # scrape from bmkg website
     except Exception:
         return None
 
-    if content.status_code == 200: # Check if website status OK/200
+    if content.status_code == 200:  # Check if website status OK/200
         soup = BeautifulSoup(content.text, 'html.parser')
         result = soup.find('span', {'class': 'waktu'})
         result = result.text.split(', ')
@@ -37,18 +38,20 @@ def data_extraction():
                 bt = location_eq[1]
             elif i == 4:
                 location_place_eq = res.text
-            i = i +1
+            i = i + 1
 
         scrape_result = dict()
-        scrape_result['date_eq'] = date_eq #Date of earth quake
-        scrape_result['time_eq'] = time_eq #Time of earth quake
-        scrape_result['magnitudo_eq'] = magnitudo_eq #Magnitudo of earth quake
-        scrape_result['location_place_eq'] = location_place_eq #Location of earth quake
-        scrape_result['location_eq'] = {'ls': ls, 'bt': bt} #Coordinate of earth quake
-        scrape_result['depth_eq'] = depth_eq # Depth of earth quake
+        scrape_result['date_eq'] = date_eq  # Date of earth quake
+        scrape_result['time_eq'] = time_eq  # Time of earth quake
+        scrape_result['magnitudo_eq'] = magnitudo_eq  # Magnitudo of earth quake
+        scrape_result['location_place_eq'] = location_place_eq  # Location of earth quake
+        scrape_result['location_eq'] = {'ls': ls, 'bt': bt}  # Coordinate of earth quake
+        scrape_result['depth_eq'] = depth_eq  # Depth of earth quake
         return scrape_result
     else:
         return None
+
+
 """
     if content.status_code == 200: # Check if website status OK/200
         soup = BeautifulSoup(content.text, 'html.parser')
@@ -91,12 +94,14 @@ def data_extraction():
             scrape_result['location_eq'] = {'ls': ls, 'bt': bt}  # Coordinate of earth quake
             scrape_result['depth_eq'] = depth_eq  # Depth of earth quake
             return scrape_result
-            
+
            else:
                 print("Data unreachable")
                 return None
 
 """
+
+
 def show_data(result):
     if result is None:
         print("Can not find earth quake data, plese check target url")
@@ -109,6 +114,7 @@ def show_data(result):
     print(f"Coordinate : {result['location_eq']['ls']}, {result['location_eq']['bt']}")
     print(f"Depth : {result['depth_eq']}")
     return result
+
 
 if __name__ == '__main__':
     result = data_extraction()
