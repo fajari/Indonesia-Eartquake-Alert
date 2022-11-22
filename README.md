@@ -12,10 +12,10 @@ This package needs:
 - BeautifulSoup4
 
 # How To Use
-import earthquake_alert
+import earthquake_alert \
 
-if __name__ == '__main__':
-    result = earthquake_alert.data_extraction()
+if __name__ == '__main__': \
+    result = earthquake_alert.data_extraction() \
     earthquake_alert.show_data(result)
 
 Version:
