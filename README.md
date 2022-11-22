@@ -1,8 +1,7 @@
 # Indonesia-Eartquake-Alert
 
-This package contain latest information of earth quake in Indonesia from two government sources
-- bmkg.go.id (Indonesia Meteorological, Climatological, and Geophysical Agency)
-- usgs.gov (United States Geological Survey) -- coming soon
+This package contain latest information of earth quake in Indonesia government agency sources
+bmkg.go.id (Indonesia Meteorological, Climatological, and Geophysical Agency)
 
 This package will use BeautifulSoup4 and Requests to produce output in JSON and it ready to use in web or mobile application
 
@@ -24,6 +23,3 @@ Version:
 0.0.3 Bug fix
 0.0.2 Bug fix
 0.0.1 Create new application with data source https://www.bmkg.go.id
-
-Note:
-* Maybe there is different magnitudo between those two information
