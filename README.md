@@ -18,6 +18,12 @@ if __name__ == '__main__':
     result = earthquake_alert.data_extraction()
     earthquake_alert.show_data(result)
 
+Version:
+0.0.5 Change data source to https://warning.bmkg.go.id
+0.0.4 Bug fix
+0.0.3 Bug fix
+0.0.2 Bug fix
+0.0.1 Create new application with data source https://www.bmkg.go.id
 
 Note:
 * Maybe there is different magnitudo between those two information
