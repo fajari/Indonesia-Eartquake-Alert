@@ -9,6 +9,7 @@ This package will use BeautifulSoup4 and Requests to produce output in JSON and 
 This package needs:
 - Python
 - BeautifulSoup4
+- Requests
 
 # How To Use
 import earthquake_alert 
