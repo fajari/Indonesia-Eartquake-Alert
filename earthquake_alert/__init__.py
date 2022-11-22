@@ -69,7 +69,7 @@ def data_extraction():
         result2 = soup.find('div', {'class': 'infoext'})
         result = result.findChildren('li')
         result2 = result2.findChildren('p')
-        #print(result3)
+
         i = 0
         x = 0
         magnitudo_eq = None
@@ -79,8 +79,6 @@ def data_extraction():
         location_eq = None
         depth_eq = None
         impacted_area = None
-        #instruction = None
-        #map = None
 
         for res in result:
             if i == 0:
@@ -89,22 +87,17 @@ def data_extraction():
             elif i == 1:
                 depth_eq = res.text.split('K')
             elif i == 2:
-                location_eq = res.text.split('LS')
+                location_eq = res.text
                 ls = location_eq[0]
                 bt = location_eq[1]
-            #elif i == 4:
-            #    location_place_eq = res.text
             i = i + 1
+
 
         for res in result2:
             if x == 0:
                 location_place_eq = res.text.split('Gempa')
             elif x == 1:
-                impacted_area = res.text.split('Dirasakan')
-            elif x == 2:
-                instruction = res.text.split('Arahan')
-        #    elif x == 4:
-        #        map = res.text.split('//')
+                impacted_area = res.text.split('Arahan')
             x = x + 1
 
 
@@ -112,14 +105,10 @@ def data_extraction():
         scrape_result['date_eq'] = date_eq  # Date of earth quake
         scrape_result['time_eq'] = time_eq  # Time of earth quake
         scrape_result['magnitudo_eq'] = magnitudo_eq2  # Magnitudo of earth quake
-        #scrape_result['location_place_eq'] = location_place_eq  # Location of earth quake
-        scrape_result['ls'] = ls # Coordinate of earth quake
-        scrape_result['bt'] = bt  # Coordinate of earth quake
+        scrape_result['location_eq'] = location_eq
         scrape_result['depth_eq'] = depth_eq[0]  # Depth of earth quake
         scrape_result['location_place_eq'] = location_place_eq[1]
         scrape_result['impacted_area'] = impacted_area[1]
-        #scrape_result['instruction'] = instruction[1]
-        #scrape_result['map'] = map
         scrape_result
         return scrape_result
 
@@ -134,14 +123,10 @@ def show_data(result):
     print(f"Date : {result['date_eq']}")
     print(f"Time : {result['time_eq']}")
     print(f"Magnitudo : {result['magnitudo_eq']}")
-    #print(f"Epicentrum : {result['location_place_eq']}")
-    #print(f"Coordinate : {result['location_eq']['ls']}, {result['location_eq']['bt']}")
-    print(f"Coordinate : {result['ls']}LS and {result['bt']}")
+    print(f"Coordinate : {result['location_eq']}")
     print(f"Depth : {result['depth_eq']}")
     print(f"Location : {result['location_place_eq']}")
     print(f"Impacted Area : {result['impacted_area']}")
-    #print(f"Instruction : {result['instruction']}")
-    #print(f"Map : {result['map']}")
     return result
 
 if __name__ == '__main__':
