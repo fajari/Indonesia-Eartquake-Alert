@@ -18,6 +18,8 @@ if __name__ == '__main__': \
     earthquake_alert.show_data(result)
 
 # Version
+0.0.7 Bug fix \
+0.0.6 Bug fix \
 0.0.5 Change data source to https://warning.bmkg.go.id \
 0.0.4 Bug fix \
 0.0.3 Bug fix \

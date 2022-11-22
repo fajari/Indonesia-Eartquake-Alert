@@ -69,7 +69,6 @@ def data_extraction():
         result2 = soup.find('div', {'class': 'infoext'})
         result = result.findChildren('li')
         result2 = result2.findChildren('p')
-
         i = 0
         x = 0
         magnitudo_eq = None
@@ -88,8 +87,8 @@ def data_extraction():
                 depth_eq = res.text.split('K')
             elif i == 2:
                 location_eq = res.text
-                ls = location_eq[0]
-                bt = location_eq[1]
+            #    ls = location_eq[0]
+            #    bt = location_eq[1]
             i = i + 1
 
 
@@ -100,7 +99,6 @@ def data_extraction():
                 impacted_area = res.text.split('Arahan')
             x = x + 1
 
-
         scrape_result = dict()
         scrape_result['date_eq'] = date_eq  # Date of earth quake
         scrape_result['time_eq'] = time_eq  # Time of earth quake
@@ -108,7 +106,7 @@ def data_extraction():
         scrape_result['location_eq'] = location_eq
         scrape_result['depth_eq'] = depth_eq[0]  # Depth of earth quake
         scrape_result['location_place_eq'] = location_place_eq[1]
-        scrape_result['impacted_area'] = impacted_area[1]
+        scrape_result['impacted_area'] = impacted_area[0]
         scrape_result
         return scrape_result
 
@@ -119,7 +117,7 @@ def show_data(result):
     if result is None:
         print("Can not find earth quake data, plese check target url")
         return
-    print('Latest Earth Quake')
+    print('Latest Earth Quake In Indonesia')
     print(f"Date : {result['date_eq']}")
     print(f"Time : {result['time_eq']}")
     print(f"Magnitudo : {result['magnitudo_eq']}")
