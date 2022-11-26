@@ -62,7 +62,6 @@ def data_extraction():
         scrape_result['impacted_area'] = impacted_area[0]
         scrape_result
         return scrape_result
-
     else:
         return None
 
