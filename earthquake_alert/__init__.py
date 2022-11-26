@@ -1,6 +1,8 @@
 from typing import List
 import requests
 from bs4 import BeautifulSoup
+
+description = "To get the latest EarthQuake information in Indonesia"
 def data_extraction():
     try:
         content = requests.get('https://warning.bmkg.go.id') #scrape from bmkg website
